@@ -6,4 +6,9 @@
   h1 {
     @apply text-4xl font-bold;
   }
+
+  input,
+  textarea {
+    @apply p-1 rounded-sm;
+  }
 }

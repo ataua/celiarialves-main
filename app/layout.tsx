@@ -17,11 +17,8 @@ export const metadata: Metadata = {
   title: "Célia Ribeiro Alves",
   description: "Cursos, mentorias e projetos pessoais visando auto-conhecimento e auto-realização. Célia Ribeiro Alves é atriz, produtora, professora e terapeuta.",
   keywords: "terapia, autoconhecimento, auto-conhecimento, vergonha, público, falar em público, timidez, mentoria, saúde mental",
-  creator: "Celia Ribeiro Alves",
-  publisher: "Celia Ribeiro Alves",
   robots: "index, follow",
-  authors: [ { name: "Atauã Pinali Doederlein", url: "https://github.com/ataua" } ],
-  abstract: "Cursos, mentorias e projetos pessoais visando auto-conhecimento e auto-realização. Célia Ribeiro Alves é atriz, produtora, professora e terapeuta.",
+  authors: [ { name: "Atauã Pinali Doederlein <ataua.doederlein@gmail.com>", url: "https://github.com/ataua" } ],
   formatDetection: {
     telephone: true,
     email: true
