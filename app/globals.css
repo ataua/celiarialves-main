@@ -4,7 +4,7 @@
 
 @layer base {
   h1 {
-    @apply text-[60px] sm:text-[80px] font-bold;
+    @apply text-[58px] md:text-[80px] font-bold;
   }
   h2 {
     @apply text-[36px] font-bold;
@@ -16,7 +16,7 @@
   }
 
   section {
-    @apply drop-shadow-md;
+    @apply drop-shadow-sm;
   }
 
   .btn {
