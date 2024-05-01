@@ -5,6 +5,9 @@ import Celia from "@public/celia_nobg.png"
 import Image from "next/image";
 import Link from "next/link";
 import Card from "@components/Card";
+import { Ms_Madi } from "next/font/google";
+
+const msMadi = Ms_Madi( { subsets: [ "latin" ], weight: "400" } );
 
 export default function Home () {
   const sendContactMessage = ( ev: FormEvent<HTMLFormElement> ) => {
@@ -18,18 +21,20 @@ export default function Home () {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between text-yellow-600">
+    <main className="flex min-h-screen flex-col items-center justify-between text-yellow-600 from-orange-200 to-red-100 bg-gradient-to-br via-red-50">
 
-      <section id='sobre' className="min-h-96 w-full bg-pink-50 px-4">
-        <h1 className="py-16 text-center w-full bg-pink-50">Célia Ribeiro Alves</h1>
-        <div className="max-w-[1080px] flex m-auto gap-10">
+      <section id='sobre' className="min-h-96 w-full px-4 mt-8">
+        <div className="max-w-[1080px] flex m-auto gap-10 items-end">
           <Image
             src={ Celia }
             alt="celia"
-            className='hidden sm:inline mix-blend-multiply !max-w-full'
-            height={ 300 }
+            className='hidden md:inline aspect-[initial] grow-0 ml-auto'
+            width={ 300 }
+            height={ 360 }
+            priority
           />
-          <aside className='flex flex-col justify-center'>
+          <aside className='flex flex-col justify-center mr-auto'>
+            <h1 className={ `py-14 text-center w-full ${ msMadi.className }` }>Célia Ribeiro</h1>
             <p className="">Cursos, mentorias e projetos pessoais</p>
             <p className="">visando auto-conhecimento e auto-realização.</p>
             <p className="">Célia Ribeiro Alves é atriz, produtora, professora e terapeuta.</p>
@@ -42,7 +47,7 @@ export default function Home () {
         </div>
       </section >
 
-      <section id='atendimento' className="min-h-96 w-full bg-green-50 px-4 py-16">
+      <section id='atendimento' className="min-h-96 w-full px-4 py-16">
         <div className="m-auto max-w-[1080px] h-auto">
           <div className='flex flex-col sm:flex-row flex-wrap justify-center gap-4'>
             <Card>
@@ -65,7 +70,7 @@ export default function Home () {
         </div>
       </section>
 
-      <section id='contato' className="h-96 w-full bg-yellow-50 px-4 py-16">
+      <section id='contato' className="h-96 w-full px-4 py-16">
         <div className="m-auto max-w-[1080px]">
           <h2 className="pb-4">Contato</h2>
           <form
