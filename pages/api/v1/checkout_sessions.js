@@ -8,13 +8,13 @@ export default async function handler(req, res) {
         line_items: [
           {
             // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-            price: '{{PRICE_ID}}',
+            price: 'price_1PADhYHHrmq4Q2xp9H8P6Qsc',
             quantity: 1,
           },
         ],
         mode: 'payment',
-        success_url: `${req.headers.origin}/?success=true`,
-        cancel_url: `${req.headers.origin}/?canceled=true`,
+        success_url: `${ req.headers.origin }/?success=true`,
+        cancel_url: `${ req.headers.origin }/?canceled=true`,
       });
       res.redirect(303, session.url);
     } catch (err) {
