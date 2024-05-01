@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 import Nav from "@components/Nav";
+import Footer from "@components/Footer";
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -11,7 +12,7 @@ export const viewport: Viewport = {
   // Also supported by less commonly used
   // interactiveWidget: 'resizes-visual',
 }
-const inter = Inter( { subsets: [ "latin" ] } );
+const quicksand = Quicksand( { subsets: [ "latin" ] } );
 
 export const metadata: Metadata = {
   title: "Célia Ribeiro Alves",
@@ -32,9 +33,10 @@ export default function RootLayout ( {
 }> ) {
   return (
     <html lang="en">
-      <body className={ inter.className }>
+      <body className={ quicksand.className }>
         <Nav />
         { children }
+        <Footer />
       </body>
     </html>
   );
