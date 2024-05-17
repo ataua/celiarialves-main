@@ -17,7 +17,7 @@ const Nav = () => {
                 </Link>
 
                 <Link
-                    href="/#mentoria"
+                    href="/mentorias"
                     className='ml-auto grid place-content-center text-white font-bold'
                 >Mentoria</Link>
 

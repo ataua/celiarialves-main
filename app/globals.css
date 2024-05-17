@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply text-yellow-600 from-orange-200 to-red-100 bg-gradient-to-br via-red-50 min-h-screen flex flex-col;
+  }
+
   h1 {
     @apply text-[58px] md:text-[80px] font-bold;
   }
@@ -12,7 +16,7 @@
 
   input,
   textarea {
-    @apply p-1 rounded-sm;
+    @apply p-1 rounded-sm text-yellow-600 focus:outline-orange-600;
   }
 
   section {

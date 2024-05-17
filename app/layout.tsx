@@ -35,7 +35,9 @@ export default function RootLayout ( {
     <html lang="en">
       <body className={ quicksand.className }>
         <Nav />
-        { children }
+        <main className="flex min-h-screen h-full flex-col items-center justify-between">
+          { children }
+        </main>
         <Footer />
       </body>
     </html>

@@ -1,12 +1,11 @@
-const Blog = () => {
+const TeatroTerapeutico = () => {
     return (
         <section className='min-h-screen max-w-[1080px] m-auto'>
-            <h1 className='w-full text-center py-16 '>Blog</h1>
+            <h1 className='w-full text-center py-16 '>Teatro Terapêutico</h1>
             <div className="bg-white rounded-md p-4 mt-4">
                 <p>Aguarde, em breve iremos adicionar informações valiosas nesse espaço!</p>
             </div>
         </section>
     )
 }
-
-export default Blog
+export default TeatroTerapeutico
