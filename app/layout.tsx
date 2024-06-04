@@ -1,16 +1,16 @@
 import type { Metadata, Viewport } from "next";
 import { Quicksand } from "next/font/google";
+import { Bounce, ToastContainer } from "react-toastify";
 import "./globals.css";
-import Nav from "@components/Nav";
+import 'react-toastify/dist/ReactToastify.css';
+import Menu from "@components/Menu";
 import Footer from "@components/Footer";
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   // Also supported by less commonly used
-  // interactiveWidget: 'resizes-visual',
+  interactiveWidget: 'resizes-visual',
 }
 const quicksand = Quicksand( { subsets: [ "latin" ] } );
 
@@ -34,10 +34,17 @@ export default function RootLayout ( {
   return (
     <html lang="en">
       <body className={ quicksand.className }>
-        <Nav />
+        <Menu />
         <main className="flex min-h-screen h-full flex-col items-center justify-between">
           { children }
         </main>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={ 2500 }
+          limit={ 4 }
+          theme="colored"
+          transition={ Bounce }
+        />
         <Footer />
       </body>
     </html>
