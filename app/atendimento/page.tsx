@@ -1,5 +1,8 @@
-import GMap from "@components/GMap/page"
-
+import GMap from "@components/GMap"
+const center: google.maps.LatLngLiteral = {
+    "lat": -25.430724647902036,
+    "lng": -49.26883555364751
+};
 
 const Atendimento = () => {
 
@@ -18,7 +21,7 @@ const Atendimento = () => {
                     </div>
 
                     <div className="w-screen h-[400px]">
-                        <GMap />
+                        <GMap center={ center } />
                     </div>
                 </div>
             </article>

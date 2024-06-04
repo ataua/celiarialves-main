@@ -1,0 +1,18 @@
+{
+    "name": "Celia Ribeiro Alves", 
+    "short_name": "celiarialves",
+    "description": "Site da atriz e terapeuta Célia Ribeiro Alves",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "",
+    "theme_color": "",
+    "icons": [
+        {
+            "src": "",
+            "sizes": "",
+            "type": "image/x-icon"
+        }
+    ]
+}
+

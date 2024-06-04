@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import Logo from "@public/logo.svg";
 
-const Nav = () => {
+const Menu = () => {
     return (
         <nav className='w-full sticky top-0 bg-gradient-to-br from-orange-900 via-orange-800 to-orange-700 drop-shadow-sm z-50'>
             <div className="m-auto max-w-[900px] justify-center flex pr-2">
@@ -34,4 +34,4 @@ const Nav = () => {
         </nav>
     )
 }
-export default Nav
+export default Menu
