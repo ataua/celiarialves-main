@@ -30,7 +30,7 @@ export default function Home () {
           <aside className='flex flex-col justify-center m-auto'>
             <h1 className={ `mb-10 text-center w-full ${ windS.className } leading-none` }>Célia Ribeiro</h1>
             <h2 className={ `max-w-[550px] mx-auto text-[2rem] leading-10 mb-6 ${ goudy.className }` }>Eu ajudo pessoas a se comunicarem usando o corpo e a voz</h2>
-            <p className="leading-6 mb-[1rem]">Sou atriz, produtora, professora e terapeuta. Ao longo de cerca de trinta anos de atividade artística e terapêutica, desenvolvi um método eficaz de preparo para psicólogas se comunicarem melhor com seu público, seja ao vivo (presencialmente) ou através de uma câmera.</p>
+            <p>Sou atriz, produtora, professora e terapeuta. Ao longo de cerca de trinta anos de atividade artística e terapêutica, desenvolvi um método eficaz de preparo para psicólogas se comunicarem melhor com seu público, seja ao vivo (presencialmente) ou através de uma câmera.</p>
             <p>Saiba um pouco mais da minha história clicando em
               <Link
                 href="/bio"

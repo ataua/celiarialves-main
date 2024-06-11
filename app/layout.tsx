@@ -31,9 +31,10 @@ export default function RootLayout ( {
 }: Readonly<{
   children: React.ReactNode;
 }> ) {
+  const isClient = typeof window !== 'undefined';
   return (
     <html lang="en">
-      <body className={ quicksand.className }>
+      <body className={ isClient ? `${ quicksand.className }` : '' }>
         <Menu />
         <main className="flex min-h-screen h-full flex-col items-center justify-between">
           { children }
