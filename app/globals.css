@@ -11,7 +11,7 @@
     @apply text-[58px] md:text-[80px] font-bold;
   }
   h2 {
-    @apply text-[36px] font-bold;
+    @apply text-[36px] font-bold mb-4;
   }
 
   input,
