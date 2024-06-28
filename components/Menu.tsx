@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 // import Logo from "@public/logo.svg";
-import Logo from "@public/c.png";
+import Logo from "@public/mandala.png";
 
 const Menu = () => {
     return (
@@ -12,7 +12,7 @@ const Menu = () => {
                         src={Logo}
                         alt="logo"
                         width={100}
-                        className="drop-shadow-sm rounded-full"
+                        className="drop-shadow-sm rounded-full h-auto"
                         priority
                     />
                 </Link>
