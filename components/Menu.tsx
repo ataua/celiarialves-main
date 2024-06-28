@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
-import Logo from "@public/logo.svg";
+// import Logo from "@public/logo.svg";
+import Logo from "@public/c.png";
 
 const Menu = () => {
     return (
@@ -8,24 +9,24 @@ const Menu = () => {
             <div className="m-auto max-w-[900px] justify-center flex pr-2">
                 <Link href="/">
                     <Image
-                        src={ Logo }
+                        src={Logo}
                         alt="logo"
-                        width={ 100 }
-                        className="drop-shadow-sm"
+                        width={100}
+                        className="drop-shadow-sm rounded-full"
                         priority
                     />
                 </Link>
 
                 <Link
-                    href="/mentorias"
+                    href="/mentoria"
                     className='ml-auto grid place-content-center text-white font-bold'
                 >Mentoria</Link>
-
+                {/* 
                 <Link
                     href="/blog"
                     className='ml-auto grid place-content-center text-white font-bold'
                 >Blog</Link>
-
+                 */}
                 <Link
                     href="/#contato"
                     className='ml-auto grid place-content-center text-white font-bold'
