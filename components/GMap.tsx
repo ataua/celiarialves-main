@@ -1,7 +1,7 @@
 "use client"
 
 import 'dotenv/config';
-import { APIProvider, Map, Marker } from "@vis.gl/react-google-maps";
+import { APIProvider, Map,  AdvancedMarker } from "@vis.gl/react-google-maps";
 
 const GMap = ( { center }: { center: google.maps.LatLngLiteral } ) => (
 
@@ -16,8 +16,9 @@ const GMap = ( { center }: { center: google.maps.LatLngLiteral } ) => (
             reuseMaps={ true }
 
         >
-            <Marker
+            <AdvancedMarker
                 position={ center }
+                title="Celiaribeiro"
             />
         </Map>
     </APIProvider>

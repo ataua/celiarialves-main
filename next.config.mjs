@@ -16,7 +16,7 @@ const nextConfig = {
                 },
                 {
                     key: 'Content-Security-Policy',
-                    value: `default-src 'self' http://localhost:3000 https://celiarialves.com.br https://server.api.mailchimp.com; style-src 'self' 'unsafe-inline' http://localhost:3000 https://celiarialves.com.br https://fonts.googleapis.com; script-src 'self' 'unsafe-eval' 'unsafe-inline' http://localhost:3000 https://celiarialves.com.br; img-src 'self' blob: data: http://localhost:3000 https://celiarialves.com.br https://*.googleusercontent.com; font-src 'self' http://localhost:3000 https://celiarialves.com.br https://fonts.googleapis.com https://fonts.gstatic.com;`,
+                    value: `default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com https://www.google-analytics.com; img-src 'self' blob: data: https://*.googleusercontent.com https://maps.googleapis.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; connect-src 'self' https://maps.googleapis.com`,
                 }
             ]
         }, {
@@ -24,7 +24,7 @@ const nextConfig = {
             source: "/api/:path*",
             headers: [
                 { key: "Access-Control-Allow-Credentials", value: "true" },
-                { key: "Access-Control-Allow-Origin", value: `http://localhost:3000 https://celiarialves.com.br` },
+                { key: "Access-Control-Allow-Origin", value: `https://celiarialves.com.br` },
                 { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,DELETE,POST,PATCH" },
                 { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
             ]
