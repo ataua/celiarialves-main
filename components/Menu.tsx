@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 // import Logo from "@public/logo.svg";
-import Logo from "@public/mandala.png";
+import Logo from "@public/mandala1.png";
 
 const Menu = () => {
     return (
