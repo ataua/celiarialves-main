@@ -6,22 +6,16 @@ const Teste = () => {
 
   const mailForm = useRef(null);
 
-  const sendEmail = async () => {
+  const sendContactMessage = async () => {
     if (!mailForm.current) {
       console.log('Form not found');
       return
     };
     const formData = new FormData(mailForm.current);
-    const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
-    const message = formData.get('message') as string;
-
-    const response = await fetch('/.netlify/functions/triggerContactFormMessage', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, email, message }),
+    const response =await fetch('/_forms/_contact.html', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: JSON.stringify(Object.fromEntries(formData)) 
     });
 
     console.log(response);
@@ -34,7 +28,7 @@ const Teste = () => {
       <section className='p-4 bg-[#fff9] shadow-md '>
         <h2>Envio de E-mail</h2>
         {/* @ts-ignore */}
-        <form ref={mailForm} netlify data-netlify="true">
+        <form ref={mailForm} netlify data-netlify="true" name="main-contact-form" method="POST" onSubmit={sendContactMessage}>
           <div className='flex flex-col gap-2'>
             <input type="text" name="name" id="name" placeholder="nome" />
             <input type="text" name="email" id="email" placeholder="email" />
