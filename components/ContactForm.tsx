@@ -28,7 +28,7 @@ const ContactForm = () => {
                 </p>
                 <form
                     data-netlify={true}
-                    name='main-contact-form'
+                    name='contact-form'
                     className='flex flex-col gap-4'
                     method='POST'
                     onSubmit={(ev) => sendContactMessage(ev)}
