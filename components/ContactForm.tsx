@@ -4,15 +4,13 @@ import { toast } from "react-toastify";
 const ContactForm = ({ target = "/" }) => {
     const sendContactMessage = async (ev: FormEvent<HTMLFormElement>) => {
         ev.preventDefault();
-        console.log("enviando...")
         toast.warn("Enviando...")
         const form = ev.currentTarget;
         const formData = new FormData(form);
-        // const data = Object.fromEntries(formData);
         const res = await fetch(target, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/x-www-form-urlencoded",
             },
             body: formData,
         })
@@ -36,7 +34,7 @@ const ContactForm = ({ target = "/" }) => {
                     name='contact-form'
                     className='flex flex-col gap-4'
                     method='POST'
-                    // onSubmit={sendContactMessage}
+                    onSubmit={sendContactMessage}
                 >
                     <div className='flex flex-col gap-2'>
                         <input type="hidden" name="form-name" value="contact-form" />
