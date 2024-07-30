@@ -27,13 +27,12 @@ const Teste = () => {
       <h1 className='py-6'>Página de testes</h1>
       <section className='p-4 bg-[#fff9] shadow-md '>
         <h2>Envio de E-mail</h2>
-        {/* @ts-ignore */}
-        <form ref={mailForm} netlify data-netlify="true" name="main-contact-form" method="POST" onSubmit={sendContactMessage}>
+        <form ref={mailForm} data-netlify="true" name="main-contact-form" method="POST" onSubmit={sendContactMessage}>
           <div className='flex flex-col gap-2'>
-            <input type="text" name="name" id="name" placeholder="nome" />
-            <input type="text" name="email" id="email" placeholder="email" />
+            <input type="text" name="name" id="name" placeholder="nome" autoComplete="nome" />
+            <input type="text" name="email" id="email" placeholder="email" autoComplete="email" />
             <textarea name="message" id="message" placeholder="mensagem" cols={30} rows={10}></textarea>
-            <button type="button" className='btn ok ml-auto' onClick={sendEmail}>Send E-mail</button>
+            <button type="submit" className='btn ok ml-auto'>Send E-mail</button>
           </div>
         </form>
 
