@@ -12,10 +12,10 @@ const Teste = () => {
       return
     };
     const formData = new FormData(mailForm.current);
-    const response =await fetch('/_forms/_contact.html', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body: JSON.stringify(Object.fromEntries(formData)) 
+    const response = await fetch('/_forms/_contact.html', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: JSON.stringify(Object.fromEntries(formData))
     });
 
     console.log(response);
@@ -29,6 +29,7 @@ const Teste = () => {
         <h2>Envio de E-mail</h2>
         <form ref={mailForm} data-netlify="true" name="main-contact-form" method="POST" onSubmit={sendContactMessage}>
           <div className='flex flex-col gap-2'>
+            <input type="hidden" name="form-name" value="main-contact-form" />
             <input type="text" name="name" id="name" placeholder="nome" autoComplete="nome" />
             <input type="text" name="email" id="email" placeholder="email" autoComplete="email" />
             <textarea name="message" id="message" placeholder="mensagem" cols={30} rows={10}></textarea>
