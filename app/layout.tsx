@@ -3,10 +3,12 @@ import { Quicksand } from "next/font/google";
 import { CustomProvider } from 'rsuite';
 
 import 'rsuite/dist/rsuite-no-reset.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import "./globals.css";
 
 import Menu from "@components/Menu";
 import Footer from "@components/Footer";
+import { ToastContainer } from "react-toastify";
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -44,6 +46,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </CustomProvider>
+        <ToastContainer />
       </body>
     </html>
   );
