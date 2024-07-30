@@ -1,12 +1,36 @@
 <html>
-    <head></head>
-    <body>
-        <form data-netlify="true" name="main-contact-form" method="POST">
-            <input type="hidden" name="form-name" value="main-contact-form" />
-            <input type="text" name="name" id="name" placeholder="nome" autoComplete="nome" />
-            <input type="text" name="email" id="email" placeholder="email" autoComplete="email" />
-            <textarea name="message" id="message" placeholder="mensagem" cols={30} rows={10}></textarea>
-            <button type="submit" >Send E-mail</button>
-        </form>
-    </body>
+  <head></head>
+  <body>
+    <form
+      name="main-contact-form"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="main-contact-form" />
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="nome"
+        autocomplete="nome"
+      />
+      <input
+        type="text"
+        name="email"
+        id="email"
+        placeholder="email"
+        autocomplete="email"
+      />
+      <textarea
+        name="message"
+        id="message"
+        placeholder="mensagem"
+        cols="{30}"
+        rows="{10}"
+      ></textarea>
+      <div data-netlify-recaptcha="true"></div>
+      <button type="submit">Send E-mail</button>
+    </form>
+  </body>
 </html>
