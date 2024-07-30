@@ -1,7 +1,7 @@
 import type { Handler } from "@netlify/functions";
 import fetch from "node-fetch";
 
-const triggerSubscribeEmail: Handler = async function(event) {
+const triggerContactFormMessage: Handler = async function(event) {
   if (event.body === null) {
     return {
       statusCode: 400,
@@ -10,8 +10,9 @@ const triggerSubscribeEmail: Handler = async function(event) {
   }
 
   const requestBody = JSON.parse(event.body) as {
-    subscriberName: string;
-    subscriberEmail: string;
+    name: string;
+    email: string;
+    message: string;
   };
 
   //automatically generated snippet from the email preview
@@ -23,11 +24,12 @@ const triggerSubscribeEmail: Handler = async function(event) {
     method: "POST",
     body: JSON.stringify({
       from: "contato@celiaralves.com.br",
-      to: requestBody.subscriberEmail,
+      to: requestBody.email,
       subject: "You've been subscribed",
       parameters: {
-        name: requestBody.subscriberName,
-        email: requestBody.subscriberEmail,
+        name: requestBody.name,
+        email: requestBody.email,
+        message: requestBody.message,
       },
     }),
   });
@@ -38,4 +40,4 @@ const triggerSubscribeEmail: Handler = async function(event) {
   };
 };
 
-export default triggerSubscribeEmail
+export default triggerContactFormMessage
