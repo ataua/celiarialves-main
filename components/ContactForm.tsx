@@ -1,42 +1,71 @@
 import { FormEvent } from "react";
-import { Bounce, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
-const ContactForm = () => {
-    const sendContactMessage = (ev: FormEvent<HTMLFormElement>) => {
+const ContactForm = ({ target = "/" }) => {
+    const sendContactMessage = async (ev: FormEvent<HTMLFormElement>) => {
         ev.preventDefault();
+        console.log("enviando...")
+        toast.warn("Enviando...")
         const form = ev.currentTarget;
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        const res = fetch("/api/v1/contact", {
+        // const data = Object.fromEntries(formData);
+        const res = await fetch(target, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(data),
+            body: formData,
         })
-        // TODO: enviar a mensagem para o back-end
-        // limpar o formulário
+        if (res.ok) {
+            toast.success("Mensagem enviada!")
+        } else {
+            toast.error("Erro ao enviar a mensagem!")
+        }
         form.reset();
-        toast.success("Mensagem enviada!")
     }
     return (
         <section id='contato' className="h-96 w-full px-4 py-16 mb-[8rem]">
             <div className="m-auto max-w-[1080px]">
                 <h2 className="pb-4">Contato</h2>
-                <p>Utilize esse formulário para entrar em contato comigo, ou mande um e-mail para:<br />
+                <p>Utilize esse formulário para entrar em contato, ou mande um e-mail para:<br />
                     <a href="mailto:contato@celiarialves.com.br" className="text-yellow-900 hover:text-blue-600">contato@celiarialves.com.br</a>
                 </p>
                 <form
                     data-netlify={true}
+                    netlify-honeypot="bot-field"
                     name='contact-form'
                     className='flex flex-col gap-4'
                     method='POST'
-                    onSubmit={(ev) => sendContactMessage(ev)}
+                    onSubmit={sendContactMessage}
                 >
-                    <input name="name" required type="text" placeholder="Nome" className="text-yellow-900 rounded-md" />
-                    <input name="email" required type="email" placeholder="E-mail" className="text-yellow-900 rounded-md" />
-                    <textarea name="message" placeholder="Mensagem" className="text-yellow-900 rounded-md" />
-                    <button type="submit" className='btn ok ml-auto' >Enviar</button>
+                    <div className='flex flex-col gap-2'>
+                        <input type="hidden" name="form-name" value="contact-form" />
+                        <input
+                            name="name"
+                            required
+                            type="text"
+                            placeholder="Nome"
+                            className="text-yellow-900 rounded-md"
+                        />
+                        <input
+                            name="email"
+                            required
+                            type="email"
+                            placeholder="E-mail"
+                            className="text-yellow-900 rounded-md"
+                        />
+                        <textarea
+                            name="message"
+                            required
+                            placeholder="Mensagem"
+                            className="text-yellow-900 rounded-md"
+                        />
+                        <button
+                            type="submit"
+                            className='btn ok ml-auto'
+                        >Enviar</button>
+                    </div>
+                    <div data-netlify-recaptcha="true"></div>
                 </form>
             </div>
         </section>
