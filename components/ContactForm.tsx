@@ -36,7 +36,7 @@ const ContactForm = ({ target = "/" }) => {
                     name='contact-form'
                     className='flex flex-col gap-4'
                     method='POST'
-                    onSubmit={sendContactMessage}
+                    // onSubmit={sendContactMessage}
                 >
                     <div className='flex flex-col gap-2'>
                         <input type="hidden" name="form-name" value="contact-form" />
