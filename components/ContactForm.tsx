@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
 import { toast } from "react-toastify";
 
-const ContactForm = ({ target = "/favicon.ico" }) => {
+const ContactForm = ({ target = "/contact-form" }) => {
     const sendContactMessage = async (ev: FormEvent<HTMLFormElement>) => {
         ev.preventDefault();
         toast.warn("Enviando...")
