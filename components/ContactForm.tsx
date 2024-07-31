@@ -7,12 +7,13 @@ const ContactForm = ({ target = "/contact-form" }) => {
         toast.warn("Enviando...")
         const form = ev.currentTarget;
         const formData = new FormData(form);
+        const data = JSON.stringify(Object.fromEntries(formData.entries()));
         const res = await fetch(target, {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
-            body: formData.toString(),
+            body: new URLSearchParams(data).toString()
         })
         if (res.ok) {
             toast.success("Mensagem enviada!")
