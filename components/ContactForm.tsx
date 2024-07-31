@@ -7,12 +7,13 @@ const ContactForm = ({ target = "/" }) => {
         toast.warn("Enviando...")
         const form = ev.currentTarget;
         const formData = new FormData(form);
+        const data = JSON.stringify(Object.fromEntries(formData.entries()));
         const res = await fetch(target, {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
-            body: formData,
+            body: new URLSearchParams(data).toString()
         })
         if (res.ok) {
             toast.success("Mensagem enviada!")
@@ -31,6 +32,7 @@ const ContactForm = ({ target = "/" }) => {
                 <form
                     data-netlify={true}
                     netlify-honeypot="bot-field"
+                    data-netlify-recaptcha="true"
                     name='contact-form'
                     className='flex flex-col gap-4'
                     method='POST'
@@ -63,7 +65,7 @@ const ContactForm = ({ target = "/" }) => {
                             className='btn ok ml-auto'
                         >Enviar</button>
                     </div>
-                    <div data-netlify-recaptcha="true"></div>
+                    <div data-netlify-recaptcha={true}></div>
                 </form>
             </div>
         </section>

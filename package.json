@@ -9,10 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@netlify/functions": "^2.8.0",
-    "@stripe/react-stripe-js": "^2.7.0",
-    "@stripe/stripe-js": "^3.3.0",
     "@vis.gl/react-google-maps": "^1.0.0",
     "dotenv": "^16.4.5",
     "micro": "^10.0.1",
@@ -23,8 +20,7 @@
     "react-dom": "^18",
     "react-toastify": "^10.0.5",
     "rsuite": "^5.64.2",
-    "sharp": "^0.33.4",
-    "stripe": "^15.4.0"
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@types/google.maps": "^3.55.9",
