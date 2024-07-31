@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
 import { toast } from "react-toastify";
 
-const ContactForm = ({ target = "/contact-form.html" }) => {
+const ContactForm = ({ target = "/api/v1/contact" }) => {
     const sendContactMessage = async (ev: FormEvent<HTMLFormElement>) => {
         ev.preventDefault();
         toast.warn("Enviando...")
@@ -12,7 +12,7 @@ const ContactForm = ({ target = "/contact-form.html" }) => {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
-            body: formData.toString(),
+            body: formData,
         })
         if (res.ok) {
             toast.success("Mensagem enviada!")
