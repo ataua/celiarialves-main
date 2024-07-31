@@ -32,13 +32,13 @@ const ContactForm = ({ target = "/api/v1/contact" }) => {
                     data-netlify={true}
                     netlify-honeypot="bot-field"
                     data-netlify-recaptcha="true"
-                    name='contact-form'
+                    name='contact'
                     className='flex flex-col gap-4'
                     method='POST'
                     onSubmit={sendContactMessage}
                 >
                     <div className='flex flex-col gap-2'>
-                        <input type="hidden" name="form-name" value="contact-form" />
+                        <input type="hidden" name="form-name" value="contact" />
                         <input
                             name="name"
                             required
