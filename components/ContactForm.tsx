@@ -7,12 +7,15 @@ const ContactForm = ({ target = "/api/v1/contact" }) => {
         toast.warn("Enviando...")
         const form = ev.currentTarget;
         const formData = new FormData(form);
+        const data = Object.fromEntries(formData)
+        const body= new URLSearchParams(data as Record<string, string>).toString()
+
         const res = await fetch(target, {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
-            body: formData,
+            body
         })
         if (res.ok) {
             toast.success("Mensagem enviada!")
