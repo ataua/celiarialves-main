@@ -7,12 +7,15 @@ const ContactForm = ({ target = "/api/v1/contact" }) => {
         toast.warn("Enviando...")
         const form = ev.currentTarget;
         const formData = new FormData(form);
+        const data = Object.fromEntries(formData)
+        const body= new URLSearchParams(data as Record<string, string>).toString()
+
         const res = await fetch(target, {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
-            body: formData,
+            body
         })
         if (res.ok) {
             toast.success("Mensagem enviada!")
@@ -32,13 +35,13 @@ const ContactForm = ({ target = "/api/v1/contact" }) => {
                     data-netlify={true}
                     netlify-honeypot="bot-field"
                     data-netlify-recaptcha="true"
-                    name='contact-form'
+                    name='contact'
                     className='flex flex-col gap-4'
                     method='POST'
                     onSubmit={sendContactMessage}
                 >
                     <div className='flex flex-col gap-2'>
-                        <input type="hidden" name="form-name" value="contact-form" />
+                        <input type="hidden" name="form-name" value="contact" />
                         <input
                             name="name"
                             required

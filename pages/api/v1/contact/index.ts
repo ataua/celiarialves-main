@@ -1,16 +1,14 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-const contactRoute = async ( req: NextApiRequest, res: NextApiResponse ) => {
-    switch ( req.method ) {
+const contactRoute = async (req: NextApiRequest, res: NextApiResponse) => {
+    switch (req.method) {
         case 'POST':
-            // const { name, email, message } = req.body as unknown as { name: string, email: string, message: string }
-            // console.log( name, email, message )
-            return res.status( 200 ).end()
+            return res.status(200).json(req.body)
         case 'OPTIONS':
-            res.setHeader( 'Allow', 'POST' )
-            return res.status( 204 ).end()
+            res.setHeader('Allow', 'POST')
+            return res.status(204).end()
         default:
-            return res.status( 405 ).json( { error: 'Method not allowed' } )
+            return res.status(405).json({ error: 'Method not allowed' })
     }
 }
 

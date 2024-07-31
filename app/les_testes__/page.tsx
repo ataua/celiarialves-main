@@ -8,7 +8,7 @@ const Teste = () => {
     <div>
       <h1 className='py-6'>Página de testes</h1>
 
-      <ContactForm />
+      {/* <ContactForm /> */}
     </div >
   );
 };
