@@ -2,17 +2,33 @@
   <head></head>
   <body>
     <form
-      name="contact-form"
       data-netlify="true"
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
+      name="contact-form"
+      class="flex flex-col gap-4"
       method="POST"
     >
-      <div>
-        <input type="hidden" name="form-name" value="contact-form" />
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="message"></textarea>
+      <div class="flex flex-col gap-2">
+        <input type="hidden" name="form-name" value="contact-form" /><input
+          required=""
+          type="text"
+          placeholder="Nome"
+          class="text-yellow-900 rounded-md"
+          name="name"
+        /><input
+          required=""
+          type="email"
+          placeholder="E-mail"
+          class="text-yellow-900 rounded-md"
+          name="email"
+        /><textarea
+          name="message"
+          required=""
+          placeholder="Mensagem"
+          class="text-yellow-900 rounded-md"
+        ></textarea
+        ><button type="submit" class="btn ok ml-auto">Enviar</button>
       </div>
       <div data-netlify-recaptcha="true"></div>
     </form>
