@@ -6,29 +6,25 @@
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
       name="contact"
-      class="flex flex-col gap-4"
-      method="POST"
     >
-      <div class="flex flex-col gap-2">
-        <input type="hidden" name="form-name" value="contact" /><input
-          required=""
+      <div>
+        <input type="hidden" name="form-name" value="contact" />
+        <input
+          required
           type="text"
           placeholder="Nome"
-          class="text-yellow-900 rounded-md"
           name="name"
         /><input
-          required=""
+          required
           type="email"
           placeholder="E-mail"
-          class="text-yellow-900 rounded-md"
           name="email"
         /><textarea
           name="message"
-          required=""
+          required
           placeholder="Mensagem"
-          class="text-yellow-900 rounded-md"
         ></textarea
-        ><button type="submit" class="btn ok ml-auto">Enviar</button>
+        ><button type="submit">Enviar</button>
       </div>
       <div data-netlify-recaptcha="true"></div>
     </form>
