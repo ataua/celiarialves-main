@@ -38,8 +38,8 @@ const ContactForm = () => {
                     data-netlify-recaptcha="true"
                     name='contact'
                     className='flex flex-col gap-4'
-                    onSubmit={sendContactMessage}
-                    action={"/contact-form.html"}
+                    // onSubmit={sendContactMessage}
+                    // action={"/contact-form.html"}
                     method="POST"
                 >
                     <div className='flex flex-col gap-2'>
