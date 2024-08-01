@@ -1,29 +1,32 @@
+"use client"
+
 import { FormEvent } from "react";
 import { toast } from "react-toastify";
 
-const ContactForm = ({ target = "/api/v1/contact" }) => {
-    const sendContactMessage = async (ev: FormEvent<HTMLFormElement>) => {
-        ev.preventDefault();
-        toast.warn("Enviando...")
-        const form = ev.currentTarget;
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData)
-        const body= new URLSearchParams(data as Record<string, string>).toString()
+const sendContactMessage = async (ev: FormEvent<HTMLFormElement>) => {
+    ev.preventDefault();
+    toast.warn("Enviando...")
+    const form = ev.currentTarget;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData)
+    const body= new URLSearchParams(data as Record<string, string>).toString()
 
-        const res = await fetch(target, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body
-        })
-        if (res.ok) {
-            toast.success("Mensagem enviada!")
-        } else {
-            toast.error("Erro ao enviar a mensagem!")
-        }
-        form.reset();
+    const res = await fetch("/api/v1/contact", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body
+    })
+    if (res.ok) {
+        toast.success("Mensagem enviada!")
+    } else {
+        toast.error("Erro ao enviar a mensagem!")
     }
+    form.reset();
+}
+
+const ContactForm = () => {
     return (
         <section id='contato' className="h-96 w-full px-4 py-16 mb-[8rem]">
             <div className="m-auto max-w-[1080px]">
