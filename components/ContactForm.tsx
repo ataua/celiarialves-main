@@ -40,7 +40,8 @@ const ContactForm = () => {
                     <a href="mailto:contato@celiarialves.com.br" className="text-yellow-900 hover:text-blue-600">contato@celiarialves.com.br</a>
                 </p>
                 <form
-                    data-netlify={true}
+                // @ts-ignore
+                    netlify
                     netlify-honeypot="bot-field"
                     data-netlify-recaptcha="true"
                     name='contact'
