@@ -7,26 +7,12 @@
       data-netlify-recaptcha="true"
       name="contact"
     >
-      <div>
-        <input type="hidden" name="form-name" value="contact" />
-        <input
-          required
-          type="text"
-          placeholder="Nome"
-          name="name"
-        /><input
-          required
-          type="email"
-          placeholder="E-mail"
-          name="email"
-        /><textarea
-          name="message"
-          required
-          placeholder="Mensagem"
-        ></textarea
-        ><button type="submit">Enviar</button>
-      </div>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
       <div data-netlify-recaptcha="true"></div>
+      <button type="submit">Enviar</button>
     </form>
   </body>
 </html>

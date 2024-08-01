@@ -11,7 +11,7 @@ const sendContactMessage = async (ev: FormEvent<HTMLFormElement>) => {
     const data = Object.fromEntries(formData)
     const body= new URLSearchParams(data as Record<string, string>).toString()
 
-    const res = await fetch("/api/v1/contact", {
+    const res = await fetch("/contact-form.html", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
