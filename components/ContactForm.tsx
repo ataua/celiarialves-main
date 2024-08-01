@@ -5,21 +5,26 @@ const sendContactMessage = async (ev: FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
     toast.warn("Enviando...")
     const form = ev.currentTarget;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData)
-    const body= new URLSearchParams(data as Record<string, string>).toString()
+    try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData)
+        const body = new URLSearchParams(data as Record<string, string>).toString()
 
-    const res = await fetch("/contact-form.html", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body
-    })
-    if (res.ok) {
-        toast.success("Mensagem enviada!")
-    } else {
+        const res = await fetch("/contact-form.html", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body
+        })
+        if (res.ok) {
+            toast.success("Mensagem enviada!")
+        } else {
+            toast.error("Erro ao enviar a mensagem!")
+        }
+    } catch (error) {
         toast.error("Erro ao enviar a mensagem!")
+        console.log(error)
     }
     form.reset();
 }
@@ -38,9 +43,7 @@ const ContactForm = () => {
                     data-netlify-recaptcha="true"
                     name='contact'
                     className='flex flex-col gap-4'
-                    // onSubmit={sendContactMessage}
-                    // action={"/contact-form.html"}
-                    method="POST"
+                    onSubmit={sendContactMessage}
                 >
                     <div className='flex flex-col gap-2'>
                         <input type="hidden" name="form-name" value="contact" />
@@ -64,12 +67,12 @@ const ContactForm = () => {
                             placeholder="Mensagem"
                             className="text-yellow-900 rounded-md"
                         />
+                        <div data-netlify-recaptcha={true}></div>
                         <button
                             type="submit"
                             className='btn ok ml-auto'
                         >Enviar</button>
                     </div>
-                    <div data-netlify-recaptcha={true}></div>
                 </form>
             </div>
         </section>
