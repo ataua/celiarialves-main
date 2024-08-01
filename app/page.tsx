@@ -1,5 +1,3 @@
-'use client'
-
 import 'dotenv/config'
 import Celia from "@public/celia2.png"
 import Image from "next/image";
