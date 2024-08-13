@@ -66,7 +66,7 @@ const Mentorias = () => {
                         <p>O módulo 5 aborda técnicas para estabelecer conexão e empatia com a audiência, como fazer perguntas, gerar expectativa e transmitir paixão pelo assunto. A autenticidade é fundamental para inspirar confiança.</p>
                     </AccordionPanel>
                     <AccordionPanel
-                        header={<h3>Módulo 6 - Superação de Barreiras</h3>}
+                        header={<h3>Módulo 6 - Feedback e melhoria contínua</h3>}
                         eventKey={6}
                     >
                         <p>Este módulo é dedicado a identificar e superar barreiras mentais e emocionais que dificultam falar em público, como medo do julgamento, perfeccionismo e insegurança. São ensinadas estratégias de autoconfiança e mentalidade de crescimento.</p>
@@ -78,7 +78,7 @@ const Mentorias = () => {
                         <p>Vamos explorado o conceito de persona e como usá-la para se comunicar de forma mais assertiva em diferentes contextos. Também é abordada a expressão clara de sentimentos e opiniões.</p>
                     </AccordionPanel>
                     <AccordionPanel
-                        header={<h3>Módulo 8 - Autoconfiança e Feedback</h3>}
+                        header={<h3>Módulo 8 - Autoconfiança e Superação de Barreiras</h3>}
                         eventKey={8}
                     >
                         <p>No último módulo, reforçamos a importância da autoconfiança e autenticidade ao falar em público. Também são dadas dicas de como solicitar e lidar com feedbacks construtivos para aprimorar continuamente a comunicação.</p>

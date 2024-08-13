@@ -37,7 +37,7 @@ export default function Home() {
           />
           <div className='flex flex-col justify-center m-auto'>
             <h1 className={`mb-10 text-center w-full ${windS.className} leading-none`}>Célia Ribeiro</h1>
-            <h2 className={`max-w-[550px] mx-auto text-[2rem] leading-10 mb-6 ${goudy.className}`}>Eu ajudo profissionais da saúde a destravarem na gravação de videos e a realizarem comunicações e palestras com confiança, sem medo de errar.</h2>
+            <h2 className={`max-w-[550px] mx-auto text-[2rem] leading-10 mb-6 ${goudy.className}`}>Eu ajudo profissionais da saúde a destravarem na gravação de vídeos e a realizarem comunicações e palestras com confiança, sem medo de errar.</h2>
             <p>Sou atriz, produtora, professora e terapeuta. Ao longo de cerca de trinta anos de atividade artística e terapêutica, desenvolvi um método eficaz de preparo para psicólogas se comunicarem melhor com seu público, seja ao vivo (presencialmente) ou através de uma câmera.</p>
 
             {!!services.bio && (
