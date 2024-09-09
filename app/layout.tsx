@@ -38,7 +38,7 @@ export default function RootLayout({
   const isClient = typeof window !== 'undefined';
   return (
     <html lang="en">
-      <body className={isClient ? `${quicksand.className}` : ''}>
+      <body className={isClient ? quicksand.className : ''}>
         <CustomProvider>
           <Menu />
           <main className="flex min-h-screen h-full flex-col items-center justify-between">
