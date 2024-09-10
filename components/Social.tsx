@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 const Social = () => (
-    <section id='social' className="w-full pt-10 pb-14 bg-gradient-to-br from-orange-900 via-orange-800 to-orange-700">
+    <section id='social' className="w-full my-10 pt-10 pb-14 bg-gradient-to-br from-orange-900 via-orange-800 to-orange-700">
         <div className="m-auto w-full h-auto">
             <h2 className="text-center pb-4 text-white">Redes sociais</h2>
             <p className="hidden">Social Media Links provided by https://flowbite.com/icons/</p>
