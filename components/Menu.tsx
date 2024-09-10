@@ -5,8 +5,8 @@ import Logo from "@public/mandala1.png";
 
 const Menu = () => {
     return (
-        <nav className='w-full sticky top-0 bg-gradient-to-br from-orange-900 via-orange-800 to-orange-700 drop-shadow-sm z-50'>
-            <div className="m-auto max-w-[900px] justify-center flex pr-2">
+        <nav className='w-full md:sticky top-0 bg-gradient-to-br from-orange-900 via-orange-800 to-orange-700 drop-shadow-sm z-50'>
+            <div className="m-auto max-w-[900px] justify-center flex flex-col items-center md:flex-row pr-2">
                 <Link href="/">
                     <Image
                         src={Logo}
@@ -19,17 +19,25 @@ const Menu = () => {
 
                 <Link
                     href="/mentoria"
-                    className='ml-auto grid place-content-center text-white font-bold'
+                    className='md:ml-auto my-4 md:my-0 text-white font-bold'
                 >Mentoria</Link>
+                <Link
+                    href="/atendimento"
+                    className='md:ml-auto my-4 md:my-0 text-white font-bold'
+                >Atendimento</Link>
+                <Link
+                    href="/palestras"
+                    className='md:ml-auto my-4 md:my-0 text-white font-bold'
+                >Palestras</Link>
                 {/* 
                 <Link
                     href="/blog"
-                    className='ml-auto grid place-content-center text-white font-bold'
+                    className='md:ml-auto my-4 md:my-0 text-white font-bold'
                 >Blog</Link>
                  */}
                 <Link
                     href="/#contato"
-                    className='ml-auto grid place-content-center text-white font-bold'
+                    className='md:ml-auto my-4 md:my-0 text-white font-bold'
                 >Contato</Link>
             </div>
         </nav>
