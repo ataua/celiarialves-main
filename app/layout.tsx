@@ -13,9 +13,9 @@ import { ToastContainer } from "react-toastify";
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  // Also supported by less commonly used
   interactiveWidget: 'resizes-visual',
-}
+};
+
 const quicksand = Quicksand({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -35,10 +35,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isClient = typeof window !== 'undefined';
   return (
     <html lang="en">
-      <body className={isClient ? quicksand.className : ''}>
+      <body className={quicksand.className}>
         <CustomProvider>
           <Menu />
           <main className="flex min-h-screen h-full flex-col items-center justify-between">
