@@ -4,24 +4,30 @@
 
 @layer base { /* estilos globais */
   body {
-    @apply text-yellow-600 from-orange-200 to-red-100 bg-gradient-to-br via-red-50 min-h-screen flex flex-col;
+    @apply text-yellow-600 from-orange-200 to-red-100 bg-gradient-to-br via-red-50 min-h-screen flex flex-col font-sans;
   }
 
   h1 {
-    @apply text-[58px] md:text-[80px] font-bold;
+    @apply text-[58px] md:text-[80px] font-bold font-title;
   }
   h2 {
-    @apply text-[36px] font-bold mb-4;
+    @apply text-[36px] font-bold mb-4 font-subtitle;
+  }
+  h3 {
+    @apply text-[24px] font-semibold mb-3 font-subtitle;
+  }
+  h4 {
+    @apply text-[20px] font-medium mb-2 font-subtitle;
   }
 
   input,
   textarea {
-    @apply rounded-md text-red-600 focus:outline-orange-600 shadow-sm shadow-yellow-600 py-2 px-4;
+    @apply rounded-md text-red-600 focus:outline-orange-600 shadow-sm shadow-yellow-600 py-2 px-4 font-sans;
   }
 
   input::placeholder,
   textarea::placeholder {
-    @apply text-yellow-600;
+    @apply text-yellow-600 font-sans;
   }
 
   section {
@@ -29,17 +35,25 @@
   }
 
   p {
-    @apply text-lg leading-8 mb-4;
+    @apply text-lg leading-8 mb-4 font-sans;
   }
 
   li {
-    @apply mb-4;
+    @apply mb-4 font-sans;
+  }
+
+  /* Classe para texto em destaque */
+  .highlight {
+    @apply font-highlight italic font-medium;
+  }
+  .highlight-bold {
+    @apply font-highlight italic font-semibold;
   }
 }
 
 @layer components {
   .btn {
-    @apply rounded-md text-center text-white py-2 px-4 font-bold;
+    @apply rounded-md text-center text-white py-2 px-4 font-bold font-menu;
   }
 
   .primary {
